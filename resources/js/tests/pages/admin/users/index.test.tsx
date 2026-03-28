@@ -42,17 +42,18 @@ vi.mock('@/routes/admin/users', () => ({
 }))
 
 const emptyPagination = {
-    links: { first: null, last: null, prev: null, next: null },
-    meta: {
-        current_page: 1,
-        from: null,
-        last_page: 1,
-        links: [],
-        path: '/admin/users',
-        per_page: 10,
-        to: null,
-        total: 0,
-    },
+    current_page: 1,
+    first_page_url: null,
+    from: null,
+    last_page: 1,
+    last_page_url: null,
+    links: [],
+    next_page_url: null,
+    path: '/admin/users',
+    per_page: 10,
+    prev_page_url: null,
+    to: null,
+    total: 0,
 }
 
 const users = [

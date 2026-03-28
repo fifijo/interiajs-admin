@@ -119,13 +119,13 @@ export default function UsersIndex({ users, filters }: Props) {
                     </Table>
                 </div>
 
-                {users.meta.last_page > 1 && (
+                {users.last_page > 1 && (
                     <div className="flex items-center justify-between">
                         <p className="text-sm text-muted-foreground">
-                            Showing {users.meta.from} to {users.meta.to} of {users.meta.total} users
+                            Showing {users.from} to {users.to} of {users.total} users
                         </p>
                         <div className="flex gap-2">
-                            {users.meta.links.map((link) => (
+                            {users.links.map((link) => (
                                 <Button
                                     key={link.label}
                                     variant={link.active ? 'default' : 'outline'}
