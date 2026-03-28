@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Field, FieldError, FieldGroup, FieldLabel } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
 import { dashboard } from '@/routes'
-import { edit as adminUsersEdit, index as adminUsersIndex, update as adminUsersUpdate } from '@/routes/admin/users'
+import { index as adminUsersIndex, update as adminUsersUpdate } from '@/routes/admin/users'
 import type { User } from '@/types'
 
 interface Props {
@@ -76,6 +76,6 @@ UsersEdit.layout = {
     breadcrumbs: [
         { title: 'Dashboard', href: dashboard().url },
         { title: 'Users', href: adminUsersIndex().url },
-        { title: 'Edit', href: adminUsersEdit(0).url },
+        { title: 'Edit', href: '#' },
     ],
 }

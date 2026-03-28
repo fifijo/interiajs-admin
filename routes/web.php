@@ -13,7 +13,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', DashboardController::class)->name('dashboard');
 
     Route::prefix('admin')->name('admin.')->group(function () {
-        Route::resource('users', Admin\UserController::class);
+        Route::resource('users', Admin\UserController::class)->except(['show']);
     });
 });
 
