@@ -10,7 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/fifijo/interiajs-admin/actions"><img src="https://github.com/fifijo/interiajs-admin/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="https://github.com/fifijo/interiajs-admin/actions"><img src="https://github.com/fifijo/interiajs-admin/actions/workflows/tests.yml/badge.svg" alt="Tests" /></a>
+  <a href="https://github.com/fifijo/interiajs-admin/actions"><img src="https://github.com/fifijo/interiajs-admin/actions/workflows/lint.yml/badge.svg" alt="Quality" /></a>
   <img src="https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white" alt="Laravel 13" />
   <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black" alt="React 19" />
   <img src="https://img.shields.io/badge/Inertia.js-v3-6C5CE7" alt="Inertia v3" />
@@ -26,8 +27,8 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://app.devin.ai/attachments/2d138f77-5d57-432b-89b3-9b4c2b4baf6d/screenshot_3407ea6a3740415295dc4a260aefa1fe.png" />
-    <img src="https://app.devin.ai/attachments/1d93d097-02ce-4c28-8a52-a2c1ef37daad/screenshot_c7cc49c4f40a41f29fc090c2747aae0c.png" alt="Admin Dashboard Preview" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/dashboard-dark.png" />
+    <img src="docs/screenshots/dashboard-light.png" alt="Admin Dashboard Preview" width="100%" />
   </picture>
 </p>
 
@@ -59,8 +60,8 @@ Most Laravel admin panels make you choose between **modern frontend tooling** an
     <td align="center" width="96"><img src="https://ui.shadcn.com/apple-touch-icon.png" width="48" /><br /><b>shadcn/ui</b></td>
   </tr>
   <tr>
-    <td align="center" width="96"><img src="https://biomejs.dev/img/favicon-32x32.png" width="48" /><br /><b>Biome</b></td>
-    <td align="center" width="96"><img src="https://pestphp.com/www/assets/logo.svg" width="48" /><br /><b>Pest</b></td>
+    <td align="center" width="96"><img src="https://cdn.jsdelivr.net/gh/biomejs/biome@main/website/static/img/favicon.svg" width="48" /><br /><b>Biome</b></td>
+    <td align="center" width="96"><img src="https://raw.githubusercontent.com/pestphp/pest/3.x/art/logo.svg" width="48" /><br /><b>Pest</b></td>
     <td align="center" width="96"><img src="https://vitest.dev/logo.svg" width="48" /><br /><b>Vitest</b></td>
     <td align="center" width="96"><img src="https://playwright.dev/img/playwright-logo.svg" width="48" /><br /><b>Playwright</b></td>
     <td align="center" width="96"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" width="48" /><br /><b>SQLite</b></td>
@@ -83,7 +84,7 @@ Most Laravel admin panels make you choose between **modern frontend tooling** an
 
 | Dashboard (Light) | Users Management | Dark Mode |
 |:---:|:---:|:---:|
-| ![Dashboard](https://app.devin.ai/attachments/1d93d097-02ce-4c28-8a52-a2c1ef37daad/screenshot_c7cc49c4f40a41f29fc090c2747aae0c.png) | ![Users](https://app.devin.ai/attachments/27663f8d-4c66-4879-a3fc-56910b73dbaf/screenshot_d00b39335b734414a7cdd5edfdafbcc9.png) | ![Dark](https://app.devin.ai/attachments/2d138f77-5d57-432b-89b3-9b4c2b4baf6d/screenshot_3407ea6a3740415295dc4a260aefa1fe.png) |
+| ![Dashboard](docs/screenshots/dashboard-light.png) | ![Users](docs/screenshots/users-management.png) | ![Dark](docs/screenshots/dashboard-dark.png) |
 | Stats cards · Recent users table | Paginated table · Search · CRUD | Full dark mode support |
 
 ---
