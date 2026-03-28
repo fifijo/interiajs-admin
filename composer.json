@@ -15,7 +15,7 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.24",
-        "laravel/boost": "^2.0",
+        "laravel/boost": "*",
         "laravel/pail": "^1.2.5",
         "laravel/pint": "^1.27",
         "laravel/sail": "^1.53",
@@ -53,8 +53,7 @@
         "lint:check": ["pint --parallel --test"],
         "ci:check": [
             "Composer\\Config::disableProcessTimeout",
-            "npm run lint:check",
-            "npm run format:check",
+            "npm run check",
             "npm run types:check",
             "@test"
         ],
