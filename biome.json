@@ -24,7 +24,23 @@
                 "useConst": "error"
             },
             "suspicious": {
-                "noExplicitAny": "warn"
+                "noExplicitAny": "warn",
+                "noArrayIndexKey": "warn",
+                "noDocumentCookie": "warn",
+                "noDoubleEquals": "warn",
+                "useIterableCallbackReturn": "warn"
+            },
+            "a11y": {
+                "noSvgWithoutTitle": "warn",
+                "useButtonType": "warn",
+                "useSemanticElements": "warn",
+                "useFocusableInteractive": "warn",
+                "useAriaPropsSupportedByRole": "warn",
+                "useAriaPropsForRole": "warn",
+                "noPositiveTabindex": "warn"
+            },
+            "security": {
+                "noDangerouslySetInnerHtml": "warn"
             }
         }
     },

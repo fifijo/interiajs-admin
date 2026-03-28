@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 test.describe('Users CRUD', () => {
     test('can view users list', async ({ page }) => {

@@ -1,4 +1,4 @@
-import { test as setup, expect } from '@playwright/test'
+import { expect, test as setup } from '@playwright/test'
 
 setup('authenticate', async ({ page }) => {
     await page.goto('/login')
