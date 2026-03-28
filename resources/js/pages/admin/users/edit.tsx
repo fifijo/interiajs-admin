@@ -1,10 +1,10 @@
 import { Head, Link, useForm } from '@inertiajs/react'
-import { type FormEventHandler } from 'react'
+import type { FormEventHandler } from 'react'
 import { Button } from '@/components/ui/button'
 import { Field, FieldError, FieldGroup, FieldLabel } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
-import { update as adminUsersUpdate, index as adminUsersIndex, edit as adminUsersEdit } from '@/routes/admin/users'
 import { dashboard } from '@/routes'
+import { edit as adminUsersEdit, index as adminUsersIndex, update as adminUsersUpdate } from '@/routes/admin/users'
 import type { User } from '@/types'
 
 interface Props {

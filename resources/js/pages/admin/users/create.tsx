@@ -1,10 +1,10 @@
 import { Head, Link, useForm } from '@inertiajs/react'
-import { type FormEventHandler } from 'react'
+import type { FormEventHandler } from 'react'
 import { Button } from '@/components/ui/button'
 import { Field, FieldError, FieldGroup, FieldLabel } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
-import { store as adminUsersStore, index as adminUsersIndex } from '@/routes/admin/users'
 import { dashboard } from '@/routes'
+import { index as adminUsersIndex, store as adminUsersStore } from '@/routes/admin/users'
 
 export default function UsersCreate() {
     const { data, setData, post, processing, errors } = useForm({

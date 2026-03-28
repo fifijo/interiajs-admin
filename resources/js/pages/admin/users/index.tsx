@@ -13,8 +13,13 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-import { index as adminUsersIndex, create as adminUsersCreate, edit as adminUsersEdit, destroy as adminUsersDestroy } from '@/routes/admin/users'
 import { dashboard } from '@/routes'
+import {
+    create as adminUsersCreate,
+    destroy as adminUsersDestroy,
+    edit as adminUsersEdit,
+    index as adminUsersIndex,
+} from '@/routes/admin/users'
 import type { PaginatedData, User } from '@/types'
 
 interface Props {
@@ -31,11 +36,15 @@ export default function UsersIndex({ users, filters }: Props) {
 
     function handleSearch(value: string) {
         setSearch(value)
-        router.get(adminUsersIndex().url, { search: value || undefined }, {
-            preserveState: true,
-            replace: true,
-            only: ['users'],
-        })
+        router.get(
+            adminUsersIndex().url,
+            { search: value || undefined },
+            {
+                preserveState: true,
+                replace: true,
+                only: ['users'],
+            },
+        )
     }
 
     function handleDelete() {
@@ -150,7 +159,10 @@ export default function UsersIndex({ users, filters }: Props) {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction onClick={handleDelete} className="bg-destructive text-white hover:bg-destructive/90">
+                        <AlertDialogAction
+                            onClick={handleDelete}
+                            className="bg-destructive text-white hover:bg-destructive/90"
+                        >
                             Delete
                         </AlertDialogAction>
                     </AlertDialogFooter>

@@ -5,7 +5,9 @@ import Dashboard from '@/pages/dashboard'
 vi.mock('@inertiajs/react', () => ({
     Head: ({ title }: { title: string }) => <title>{title}</title>,
     Link: ({ href, children, ...props }: { href: string; children: React.ReactNode; [key: string]: unknown }) => (
-        <a href={href} {...props}>{children}</a>
+        <a href={href} {...props}>
+            {children}
+        </a>
     ),
 }))
 

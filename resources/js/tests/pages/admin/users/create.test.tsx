@@ -5,7 +5,9 @@ import UsersCreate from '@/pages/admin/users/create'
 vi.mock('@inertiajs/react', () => ({
     Head: ({ title }: { title: string }) => <title>{title}</title>,
     Link: ({ href, children, ...props }: { href: string; children: React.ReactNode; [key: string]: unknown }) => (
-        <a href={href} {...props}>{children}</a>
+        <a href={href} {...props}>
+            {children}
+        </a>
     ),
     useForm: () => ({
         data: { name: '', email: '', password: '', password_confirmation: '' },
