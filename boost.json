@@ -1,14 +1,9 @@
 {
-    "agents": [
-        "copilot",
-        "cursor"
-    ],
+    "agents": ["copilot", "cursor"],
     "guidelines": true,
     "mcp": true,
     "nightwatch_mcp": false,
-    "packages": [
-        "laravel/fortify"
-    ],
+    "packages": ["laravel/fortify"],
     "sail": false,
     "skills": [
         "laravel-best-practices",

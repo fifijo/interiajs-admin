@@ -51,12 +51,7 @@
         ],
         "lint": ["pint --parallel"],
         "lint:check": ["pint --parallel --test"],
-        "ci:check": [
-            "Composer\\Config::disableProcessTimeout",
-            "npm run check",
-            "npm run types:check",
-            "@test"
-        ],
+        "ci:check": ["Composer\\Config::disableProcessTimeout", "npm run check", "npm run types:check", "@test"],
         "test": ["@php artisan config:clear --ansi", "@lint:check", "@php artisan test"],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
