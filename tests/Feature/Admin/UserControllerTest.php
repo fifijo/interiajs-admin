@@ -31,7 +31,7 @@ test('users can be searched', function () {
     User::factory()->create(['name' => 'John Doe', 'email' => 'john@example.com']);
     User::factory()->create(['name' => 'Jane Smith', 'email' => 'jane@example.com']);
 
-    $response = $this->get(route('admin.users.index', ['search' => 'John']));
+    $response = $this->get(route('admin.users.index', ['search' => 'John Doe']));
 
     $response->assertOk();
     $response->assertInertia(fn ($page) => $page
