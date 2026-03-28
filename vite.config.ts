@@ -22,4 +22,13 @@ export default defineConfig({
             formVariants: true,
         }),
     ],
+    test: {
+        environment: 'jsdom',
+        globals: true,
+        setupFiles: ['resources/js/tests/setup.ts'],
+        include: ['resources/js/tests/**/*.test.{ts,tsx}'],
+        alias: {
+            '@/': new URL('./resources/js/', import.meta.url).pathname,
+        },
+    },
 })
