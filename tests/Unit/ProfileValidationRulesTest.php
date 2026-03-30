@@ -37,20 +37,20 @@ test('name rules are returned correctly', function () {
     $rules = $this->trait->publicNameRules();
 
     expect($rules)->toBeArray();
-    expect($rules)->toContain('required');
-    expect($rules)->toContain('string');
-    expect($rules)->toContain('max:255');
     expect($rules)->toHaveCount(3);
+    expect(in_array('required', $rules))->toBeTrue();
+    expect(in_array('string', $rules))->toBeTrue();
+    expect(in_array('max:255', $rules))->toBeTrue();
 });
 
 test('email rules are returned correctly without user id', function () {
     $rules = $this->trait->publicEmailRules();
 
     expect($rules)->toBeArray();
-    expect($rules)->toContain('required');
-    expect($rules)->toContain('string');
-    expect($rules)->toContain('email');
-    expect($rules)->toContain('max:255');
+    expect(in_array('required', $rules))->toBeTrue();
+    expect(in_array('string', $rules))->toBeTrue();
+    expect(in_array('email', $rules))->toBeTrue();
+    expect(in_array('max:255', $rules))->toBeTrue();
     // Should contain unique rule - check for Rules\Unique (plural)
     expect(array_filter($rules, fn ($r) => $r instanceof \Illuminate\Validation\Rules\Unique))->toHaveCount(1);
 });

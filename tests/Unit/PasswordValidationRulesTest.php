@@ -2,7 +2,6 @@
 
 use App\Concerns\PasswordValidationRules;
 use Illuminate\Validation\Rules\Password;
-use PHPUnit\Framework\TestCase;
 
 class MockPasswordValidationRules
 {
@@ -27,10 +26,10 @@ test('password rules are returned correctly', function () {
     $rules = $this->trait->publicPasswordRules();
 
     expect($rules)->toBeArray();
-    expect($rules)->toContain('required');
-    expect($rules)->toContain('string');
-    expect($rules)->toContain('confirmed');
     expect($rules)->toHaveCount(4);
+    expect(in_array('required', $rules))->toBeTrue();
+    expect(in_array('string', $rules))->toBeTrue();
+    expect(in_array('confirmed', $rules))->toBeTrue();
 });
 
 test('password rules contain default password rule', function () {
@@ -51,8 +50,8 @@ test('current password rules are returned correctly', function () {
     $rules = $this->trait->publicCurrentPasswordRules();
 
     expect($rules)->toBeArray();
-    expect($rules)->toContain('required');
-    expect($rules)->toContain('string');
-    expect($rules)->toContain('current_password');
     expect($rules)->toHaveCount(3);
+    expect(in_array('required', $rules))->toBeTrue();
+    expect(in_array('string', $rules))->toBeTrue();
+    expect(in_array('current_password', $rules))->toBeTrue();
 });

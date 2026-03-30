@@ -15,10 +15,10 @@ test('store user request has correct validation rules', function () {
 
     expect($rules)->toBeArray();
     expect($rules)->toHaveKeys(['name', 'email', 'password']);
-    expect($rules['name'])->toContain('required');
-    expect($rules['email'])->toContain('required');
-    expect($rules['password'])->toContain('required');
-    expect($rules['password'])->toContain('confirmed');
+    expect(in_array('required', $rules['name']))->toBeTrue();
+    expect(in_array('required', $rules['email']))->toBeTrue();
+    expect(in_array('required', $rules['password']))->toBeTrue();
+    expect(in_array('confirmed', $rules['password']))->toBeTrue();
     // Email should have unique rule - check for Rules\Unique (plural)
     expect(array_filter($rules['email'], fn ($r) => $r instanceof \Illuminate\Validation\Rules\Unique))->toHaveCount(1);
 });
@@ -26,5 +26,5 @@ test('store user request has correct validation rules', function () {
 test('store user request has password confirmation required', function () {
     $rules = $this->request->rules();
 
-    expect($rules['password'])->toContain('confirmed');
+    expect(in_array('confirmed', $rules['password']))->toBeTrue();
 });
