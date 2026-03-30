@@ -2,15 +2,29 @@
 
 use App\Concerns\PasswordValidationRules;
 use Illuminate\Validation\Rules\Password;
+use PHPUnit\Framework\TestCase;
+
+class MockPasswordValidationRules
+{
+    use PasswordValidationRules;
+
+    public function publicPasswordRules(): array
+    {
+        return $this->passwordRules();
+    }
+
+    public function publicCurrentPasswordRules(): array
+    {
+        return $this->currentPasswordRules();
+    }
+}
 
 beforeEach(function () {
-    $this->trait = new class {
-        use PasswordValidationRules;
-    };
+    $this->trait = new MockPasswordValidationRules();
 });
 
 test('password rules are returned correctly', function () {
-    $rules = $this->trait->passwordRules();
+    $rules = $this->trait->publicPasswordRules();
 
     expect($rules)->toBeArray();
     expect($rules)->toContain('required');
@@ -20,7 +34,7 @@ test('password rules are returned correctly', function () {
 });
 
 test('password rules contain default password rule', function () {
-    $rules = $this->trait->passwordRules();
+    $rules = $this->trait->publicPasswordRules();
 
     // The Password::default() should be in the rules
     $passwordRuleFound = false;
@@ -34,7 +48,7 @@ test('password rules contain default password rule', function () {
 });
 
 test('current password rules are returned correctly', function () {
-    $rules = $this->trait->currentPasswordRules();
+    $rules = $this->trait->publicCurrentPasswordRules();
 
     expect($rules)->toBeArray();
     expect($rules)->toContain('required');
