@@ -1,51 +1,42 @@
 <?php
 
+use App\Models\User;
 use App\Policies\UserPolicy;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class MockUser
-{
-    public function __construct(public int $id) {}
-}
+uses(RefreshDatabase::class);
 
 beforeEach(function () {
     $this->policy = new UserPolicy();
+    $this->user = User::factory()->create();
 });
 
 test('any user can view any models', function () {
-    $user = new MockUser(1);
-
-    expect($this->policy->viewAny($user))->toBeTrue();
+    expect($this->policy->viewAny($this->user))->toBeTrue();
 });
 
 test('any user can view any model', function () {
-    $user = new MockUser(1);
-    $otherUser = new MockUser(2);
+    $otherUser = User::factory()->create();
 
-    expect($this->policy->view($user, $otherUser))->toBeTrue();
+    expect($this->policy->view($this->user, $otherUser))->toBeTrue();
 });
 
 test('any user can create models', function () {
-    $user = new MockUser(1);
-
-    expect($this->policy->create($user))->toBeTrue();
+    expect($this->policy->create($this->user))->toBeTrue();
 });
 
 test('any user can update any model', function () {
-    $user = new MockUser(1);
-    $otherUser = new MockUser(2);
+    $otherUser = User::factory()->create();
 
-    expect($this->policy->update($user, $otherUser))->toBeTrue();
+    expect($this->policy->update($this->user, $otherUser))->toBeTrue();
 });
 
 test('user cannot delete themselves', function () {
-    $user = new MockUser(1);
-
-    expect($this->policy->delete($user, $user))->toBeFalse();
+    expect($this->policy->delete($this->user, $this->user))->toBeFalse();
 });
 
 test('user can delete other users', function () {
-    $user = new MockUser(1);
-    $otherUser = new MockUser(2);
+    $otherUser = User::factory()->create();
 
-    expect($this->policy->delete($user, $otherUser))->toBeTrue();
+    expect($this->policy->delete($this->user, $otherUser))->toBeTrue();
 });

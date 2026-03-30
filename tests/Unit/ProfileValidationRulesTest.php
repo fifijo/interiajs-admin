@@ -51,6 +51,6 @@ test('email rules are returned correctly without user id', function () {
     expect($rules)->toContain('string');
     expect($rules)->toContain('email');
     expect($rules)->toContain('max:255');
-    // Should contain unique rule
-    expect(array_filter($rules, fn ($r) => $r instanceof \Illuminate\Validation\Rule && is_a($r, \Illuminate\Validation\Rule\Unique::class, true)))->toHaveCount(1);
+    // Should contain unique rule - check for Rules\Unique (plural)
+    expect(array_filter($rules, fn ($r) => $r instanceof \Illuminate\Validation\Rules\Unique))->toHaveCount(1);
 });

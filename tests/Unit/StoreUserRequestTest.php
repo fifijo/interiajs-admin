@@ -19,8 +19,8 @@ test('store user request has correct validation rules', function () {
     expect($rules['email'])->toContain('required');
     expect($rules['password'])->toContain('required');
     expect($rules['password'])->toContain('confirmed');
-    // Email should have unique rule
-    expect(array_filter($rules['email'], fn ($r) => $r instanceof \Illuminate\Validation\Rule && is_a($r, \Illuminate\Validation\Rule\Unique::class, true)))->toHaveCount(1);
+    // Email should have unique rule - check for Rules\Unique (plural)
+    expect(array_filter($rules['email'], fn ($r) => $r instanceof \Illuminate\Validation\Rules\Unique))->toHaveCount(1);
 });
 
 test('store user request has password confirmation required', function () {
